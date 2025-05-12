@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: #1e1e1e;
+    border-radius: 10px;
+
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #2c2c2c;
+    border-radius: 10px;
+    border: solid 1px #1e1e1e;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #2c2c2c;
+  }
+
+  /* Background Personalizado */
+  .bg-dark-global {
+    background-color: #1e1e1e;
+    background-image: radial-gradient(circle, #2c2c2c, #282828, #252525, #212121, #1e1e1e);
+  }
+
+  .line {
+    position: relative;
+  }
+
+  .line::before {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 3px;
+    height: 3em;
+    top: -4rem;
+    border-radius: 10%;
+    opacity: .7;
+  }
+
+  .line::after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 3px;
+    height: 3em;
+    bottom: -4rem;
+    border-radius: 10%;
+    opacity: .7;
+  }
+
+}
+
+.swiper-pagination{
+  position: relative !important;
+}
+.swiper-pagination-bullet {
+  background: white !important;
+  width: 12px;
+  height: 12px;
+  opacity: 0.6;
+  transition: all 0.3s ease;
+  margin-top: 22em;
+}
+.swiper-pagination-bullet-active {
+  background: #ededed !important; 
+  width: 16px;
+  height: 16px;
+  opacity: 1;
+}
