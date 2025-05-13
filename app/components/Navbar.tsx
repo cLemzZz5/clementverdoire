@@ -64,7 +64,7 @@ export const Navbar = () => {
         { name: 'home', path: `/` },
         { name: 'about', path: '/about' },
         { name: 'projects', path: '/projects' },
-        { name: 'resume', path: '/docs/BrunoCurriculo.pdf' },
+        { name: 'resume', path: '/docs/CV-Clément-Verdoire.pdf' },
         { name: 'experience', path: '/experiences' },
         { name: 'feedback', path: '/feedbacks' }
     ]
