@@ -23,7 +23,7 @@ export default function Experiences() {
                 <span className="w-10 h-[2px] my-2  bg-white dark:bg-lightBlue block rounded"></span>
             </div>
 
-            <div className="w-full lg:w-3/4 h-2/4 pb-32 lg:pb-0 overflow-hidden rounded-3xl bg-white lg:dark:bg-cinza">
+            <div className="w-[90%] lg:w-3/4 h-svh lg:h-2/4 pb-32 lg:pb-0 overflow-x-hidden rounded-3xl bg-white lg:dark:bg-cinza mx-auto mb-8">
                 <div className="lg:overflow-y-auto custom-scrollbar h-full">
                     <ul className="pb-32 lg:pb-0">
                         {experiences.map((exp, index) => (
