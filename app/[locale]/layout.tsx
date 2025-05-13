@@ -22,8 +22,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Bruno Furtado",
-  description: "Transformo código em experiências incríveis! Sou um dev front-end apaixonado por design e interatividade. Veja meus projetos!",
+  title: "Clément Verdoire",
+  description: "Transformation du code en expériences incroyables ! Je suis un développeur front-end passionné par le design et l'interactivité. Découvrez mes projets !",
   icons: {
     icon: "/favicon.ico",
   },
@@ -49,7 +49,7 @@ export default async function RootLayout({
 
   return (
     <html lang={locale} >
-      <body className={`${inter.className} lg:overflow-clip antialiased bg-laranja dark:bg-dark-global w-screen h-screen flex flex-col items-center justify-center relative`}>
+      <body className={`${inter.className} lg:overflow-clip antialiased bg-lightBlue dark:bg-dark-global w-screen h-screen flex flex-col items-center justify-center relative`}>
         <ThemeProviderClient >
           <NextIntlClientProvider locale={locale} messages={messages}>
             <Navbar />

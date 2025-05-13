@@ -6,8 +6,8 @@ const plugin = require("tailwindcss/plugin");
 /** @type {import('tailwindcss').Config} */
 
 export default {
-  
-  darkMode: "class", 
+
+  darkMode: "class",
 
   content: [
     "./app/**/*.{js,ts,jsx,tsx}",
@@ -29,7 +29,7 @@ export default {
       colors: {
 
         background: {
-          DEFAULT: "#f8f9fa",
+          DEFAULT: "#f0f0f0",
           dark: "#1e1e1e",
         },
         text: {
@@ -38,11 +38,13 @@ export default {
         },
 
         cinza: "#2c2c2c",
-        laranja: "#dfa47d",
-        laranja2: "#df8e3a",
+        lightBlue: "#f0f0f0",
+        lightBlue2: "#df8e3a",
+        blue: "#4bbed3",
+        green: "#8EDC78",
         preto: "#1e1e1e",
-        branco: "#ededed",
-        
+        white: "#ffffff",
+
       },
     },
   },

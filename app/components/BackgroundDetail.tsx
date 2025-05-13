@@ -11,7 +11,7 @@ const BackgroundDetail = () => {
     const [on, setOn] = useState(false)
 
     useEffect(() => {
-        pathname === '/pt' || pathname === '/en' ?
+        pathname === '/fr' || pathname === '/en' ?
             setOn(false) : setOn(true)
     }, [pathname])
 

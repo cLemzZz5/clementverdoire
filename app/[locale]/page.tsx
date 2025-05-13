@@ -12,7 +12,7 @@ export default function Home() {
   const [colorLine, setColorLine] = useState('#dfa47d');
 
   useEffect(() => {
-    theme === 'light' ? setColorLine('#1e1e1e') : setColorLine('#dfa47d')
+    theme === 'light' ? setColorLine('#ffffff') : setColorLine('#f0f0f0')
   }, [theme])
 
 
@@ -36,7 +36,7 @@ export default function Home() {
           <motion.path
             d="M100 10 L190 55 L190 145 L100 190 L10 145 L10 55 Z"
             stroke={colorLine}
-            strokeWidth="1"
+            strokeWidth="6"
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeDasharray="150"
@@ -49,8 +49,8 @@ export default function Home() {
           />
         </motion.svg>
 
-        <div className={`font-title absolute inset-0 text-cinza dark:text-branco flex flex-col items-center justify-center`}>
-          <h1 className="text-center text-[80px] md:text-[102px] leading-[80px] md:leading-[100px] ">BRUNO <br /> FURTADO</h1>
+        <div className={`font-title absolute inset-0 text-cinza dark:text-white flex flex-col items-center justify-center`}>
+          <h1 className="text-center text-[80px] md:text-[102px] leading-[80px] md:leading-[100px] ">CLÉMENT <br /> VERDOIRE</h1>
           <p className="mt-4">{t("Subtitle")}</p>
         </div>
       </div>

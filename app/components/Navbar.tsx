@@ -18,23 +18,21 @@ import { MdMenu } from "react-icons/md";
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 
-
-
 export const Navbar = () => {
 
     const pathname = usePathname();
     const router = useRouter();
     const params = useParams();
-    const locale = params.locale as 'pt' | 'en';
+    const locale = params.locale as 'fr' | 'en';
 
-    const [language, setLanguage] = useState<'pt' | 'en'>(locale);
+    const [language, setLanguage] = useState<'fr' | 'en'>(locale);
 
     useEffect(() => {
         setLanguage(locale);
     }, [locale]);
 
     function ToggleLanguage(i: string) {
-        const newLanguage = i === 'pt' ? 'en' : 'pt';;
+        const newLanguage = i === 'fr' ? 'en' : 'fr';;
         router.push(pathname, { locale: newLanguage })
     }
 
@@ -64,36 +62,34 @@ export const Navbar = () => {
 
     const menuItems = [
         { name: 'home', path: `/` },
-        { name: 'about', path: '/sobre' },
-        { name: 'projects', path: '/projetos' },
+        { name: 'about', path: '/about' },
+        { name: 'projects', path: '/projects' },
         { name: 'resume', path: '/docs/BrunoCurriculo.pdf' },
-        { name: 'experience', path: '/experiencia' },
-        { name: 'feedback', path: '/depoimentos' },
-        { name: 'contact', path: '/contato' }
+        { name: 'experience', path: '/experiences' },
+        { name: 'feedback', path: '/feedbacks' }
     ]
 
     const t = useTranslations('Navbar')
 
     const [isOpen, setIsOpen] = useState(false);
 
- 
+
     return (
         <header className="navbar w-full z-50 absolute top-0 px-4 sm:px-0" >
             <nav className='navbar__container container m-auto py-6 flex items-center justify-between' id="navbar">
 
                 <Link href={`/${locale}/`} className='z-50' onClick={() => setIsOpen(false)}>
-                    <Image src='/logo.webp' alt="Logo Image" className="max-w-16 brightness-0 dark:filter-none" width={100} height={50} />
+                    <Image src='/logoCV.png' alt="Logo Image" className="max-w-16 brightness-0 dark:filter-none" width={100} height={50} />
                 </Link>
 
                 <div className="flex items-center gap-3">
-                    <button className=' dark:text-laranja flex items-center' onClick={() => ToggleLanguage(language)} aria-label="Toggle language">
+                    <button className='text-blue dark:text-green flex items-center' onClick={() => ToggleLanguage(language)} aria-label="Toggle language">
                         <IoEarthOutline className='text-xl mr-1' />
                         <p className='uppercase'>{language}</p>
                         <MdOutlineKeyboardArrowDown />
                     </button>
 
-
-                    <button className='toggle-container bg-cinza dark:bg-laranja'
+                    <button className='toggle-container bg-cinza dark:bg-lightBlue'
                         style={{
                             ...container,
                             justifyContent: "flex-" + (isOn ? "end" : "start"),
@@ -103,19 +99,17 @@ export const Navbar = () => {
                             style={handle} layout
                             transition={{ type: "spring", visualDuration: 0.2, bounce: 0.2, }}>
 
-                                {
-                                    isOn ?  <FaMoon className='bg-laranja text-cinza rounded-full text-2xl p-1' /> : <HiSun className='bg-preto text-laranja rounded-full text-2xl ' />
-                                }
-                        
-                            
+                            {
+                                isOn ? <FaMoon className='bg-lightBlue text-cinza rounded-full text-2xl p-1' /> : <HiSun className='bg-preto text-lightBlue rounded-full text-2xl ' />
+                            }
 
                         </motion.div>
                     </button>
 
-                    <MdMenu className='lg:hidden dark:text-laranja text-4xl cursor-pointer z-50' aria-label="Open Menu" onClick={() => setIsOpen(!isOpen)} />
+                    <MdMenu className='lg:hidden dark:text-lightBlue text-4xl cursor-pointer z-50' aria-label="Open Menu" onClick={() => setIsOpen(!isOpen)} />
 
                     <motion.div
-                        className={`fixed top-0 right-0 w-full h-screen dark:text-branco bg-laranja dark:bg-dark-global
+                        className={`fixed top-0 right-0 w-full h-screen dark:text-white bg-lightBlue dark:bg-dark-global
                         transform ${isOpen ? "-translate-x-0" : "translate-x-full"}
                         transition-transform duration-300 ease-in-out`}
                     >
@@ -128,9 +122,9 @@ export const Navbar = () => {
                                     transition={{ delay: index * 0.1, duration: 0.4 }}
                                     className="relative group"
                                 >
-                                    <Link href={item.name === 'resume' ? item.path : `/${locale}` + item.path}  aria-label={`Ir para ${item.name}`} className='uppercase  text-lg ' onClick={() => setIsOpen(false)}>
+                                    <Link href={item.name === 'resume' ? item.path : `/${locale}` + item.path} aria-label={`Ir para ${item.name}`} className='uppercase  text-lg ' onClick={() => setIsOpen(false)}>
                                         {t(item.name)}
-                                        <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-laranja transition-all duration-300 group-hover:w-full"></span>
+                                        <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-lightBlue transition-all duration-300 group-hover:w-full"></span>
                                     </Link>
                                 </motion.li>
                             ))}

@@ -1,0 +1,97 @@
+{
+    "HomePage": {
+        "Subtitle": "Développeur Frontend | UX / UI Designer"
+    },
+    "Navbar": {
+        "home": "Accueil",
+        "about": "À propos",
+        "projects": "Projets",
+        "resume": "CV",
+        "experience": "Expérience",
+        "contact": "Contact",
+        "feedback": "Témoignages"
+    },
+    "About": {
+        "Title": "À propos",
+        "CardTitle1": "Développement Web",
+        "CardDescription1": "Conception de sites web modernes, dynamiques et adaptatifs, pensés pour offrir une expérience fluide sur tous les écrans",
+        "CardTitle2": "UX/UI Design",
+        "CardDescription2": "Création de wireframes et prototypes interactifs avec Figma pour visualiser et tester le produit numérique en temps réel",
+        "CardTitle3": "Création de contenus & réseaux sociaux",
+        "CardDescription3": "Gestion et création de contenus visuels pour les réseaux sociaux de Limagne Basket : stories, publications et communication graphique",
+        "Description": "Passionné par le design et le développement web, je conçois des expériences numériques à la fois esthétiques, performantes et accessibles. Mon approche combine la technique — avec la création d’interfaces dynamiques et responsives — et le design — à travers des maquettes et prototypes interactifs réalisés sur Figma. Curieux et polyvalent, j’ai également eu l’occasion de contribuer à la stratégie de communication d’un club sportif, en produisant du contenu visuel pour ses réseaux sociaux. Cette diversité de projets m’a permis d’affiner ma sensibilité créative tout en renforçant mes compétences techniques et collaboratives."
+    },
+    "Projects": {
+        "Title": "Projets",
+        "Button": "Voir le projet"
+    },
+    "Experience": {
+        "Title": "Expérience",
+        "Job": "Responsabilités",
+        "Experiences": [
+            {
+                "Title": "Quizzbox Solutions",
+                "Position": "Développeur Web",
+                "Date": "2023 - Présent",
+                "Description": "Responsable du développement et de la maintenance de sites et applications web performants, avec un focus particulier sur l'application SignEval. L'objectif est de garantir l'accessibilité, l'optimisation de la performance, et de fournir une expérience utilisateur fluide et intuitive.",
+                "Responsibilities": [
+                    "Développement d'interfaces web responsives pour SignEval, en utilisant HTML5, CSS3, JavaScript, ReactJS et Vue.js",
+                    "Utilisation de MUI pour créer des interfaces modernes et performantes",
+                    "Création de designs intuitifs pour SignEval en appliquant les concepts UX/UI afin de rendre l'expérience utilisateur simple et agréable",
+                    "Optimisation de la performance de l'application, avec un focus sur la réactivité et le SEO",
+                    "Gestion de la sécurité des données et mise en place des bonnes pratiques pour garantir l'intégrité des informations sur SignEval",
+                    "Rôle clé dans la gestion de projet de SignEval, en l'absence de PO, et coordination des différentes phases de développement"
+                ]
+            },
+            {
+                "Title": "CyrilDevessier",
+                "Position": "Développeur Web (Personnel)",
+                "Date": "2024 - Présent",
+                "Description": "Développement d'un site web interactif pour le pâtissier Cyril Devessier, permettant de gérer facilement les gâteaux à l'affiche et de publier des publicités pour les nouveaux produits. Ce projet vise à offrir une plateforme dynamique et facile à gérer, adaptée aux besoins de la pâtisserie.",
+                "Responsibilities": [
+                    "Développement d'une interface web avec Next.js pour une expérience utilisateur fluide et réactive",
+                    "Utilisation de MongoDB pour la gestion des données des produits et des publicités",
+                    "Conception d'un design simple et intuitif avec MUI et CSS, en mettant l'accent sur la présentation visuelle des gâteaux",
+                    "Intégration de FontAwesome pour ajouter des icônes attractives et fonctionnelles",
+                    "Mise en place de fonctionnalités permettant à l'utilisateur de gérer facilement les articles à l'affiche et de créer des publicités pour les nouveaux gâteaux",
+                    "Optimisation du site pour garantir une gestion simple et une expérience agréable pour le propriétaire du site"
+                ]
+            },
+            {
+                "Title": "Quizzbox Solutions",
+                "Position": "Stagiaire Développeur Web",
+                "Date": "Avril 2023 - Juillet 2023",
+                "Description": "Développement d'une interface pour gérer les tokens générés lors des authentifications via OVH. L'objectif était de faciliter la gestion des tokens d'authentification pour garantir la sécurité et la gestion des accès.",
+                "Responsibilities": [
+                    "Développement d'une interface web en React et MUI pour communiquer avec l'API d'OVH",
+                    "Gestion des tokens générés lors des authentifications sur OVH, avec possibilité de les visualiser et de les supprimer",
+                    "Intégration des mécanismes d'authentification sécurisée pour garantir l'intégrité des échanges avec l'API d'OVH",
+                    "Optimisation de l'interface pour assurer une expérience utilisateur fluide et intuitive",
+                    "Collaborations avec les équipes techniques pour intégrer l'interface aux processus d'authentification existants"
+                ]
+            }
+        ]
+    },
+    "Feedback": {
+        "Title": "Témoignages",
+        "SubTitle": "Découvrez ce que mes clients et partenaires disent de mon travail !",
+        "TextIntro": "Chaque projet est unique, et je m’engage à fournir des solutions efficaces, optimisées et bien structurées. Voici leurs retours d’expérience.",
+        "Feedbacks": [
+            {
+                "Name": "Thibault LAFAURIE",
+                "Position": "Développeur Web Symphony | Quizzbox Solutions",
+                "Text": "C’est un vrai plaisir de travailler avec quelqu’un d’aussi impliqué et volontaire que Clément. Il fait preuve d’initiative, est autonome et sait travailler en équipe. Vivement le prochain projet sur lequel nous pourrons collaborer de nouveau !"
+            },
+            {
+                "Name": "Sonny PETOT",
+                "Position": "Développeur Web React.js| Quizzbox Solutions",
+                "Text": "Travailler avec Clément est un vrai plaisir : il est à l’écoute, sait se remettre en question et il est animé par l’envie de bien faire. Son attitude positive et son engagement sont très appréciables au quotidien."
+            },
+            {
+                "Name": "Julien BONHOMME",
+                "Position": "CTO | Quizzbox Solutions",
+                "Text": "Clément apporte une attention particulière au design des applications qu'il conçoit. À l'écoute des besoins, il s'adapte en fonction des retours qui lui sont proposés. Impliqué, il n'hésite pas à faire appel à toutes les compétences disponibles pour faire avancer ses projets."
+            }
+        ]
+    }
+}
