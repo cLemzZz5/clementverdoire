@@ -23,7 +23,6 @@ export default function Projects() {
     const projectsCard: Project[] = [
         { name: 'Cyril Devessier', image: '/projects/cd.svg', description: 'Next APP', stacks: 'React | Next.js | CSS | JavaScript | MUI', link: 'https://www.cyrildevessier.com/' },
         { name: 'SignEval', image: '/projects/Logo_SignEval_blanc.png', description: 'PWA', info: 'Quizzbox Solutions', stacks: 'React | PWA | MUI | TypeScript', link: 'https://app.signeval.fr', maquetteLink: './projects/signeval/' },
-        // { name: 'LA Medic Rio', image: '/projects/lamediclg.webp', description: 'Website Institucional', stacks: 'HTML | Sass | Javascript', link: 'https://lamedicrio.com/' },
         { name: 'Portfolio', image: '/projects/logoCV.png', description: 'Portfolio', stacks: 'React | Next.js | Talwind CSS | TypeScript', link: 'https://clementverdoire.fr/' },
     ]
 
@@ -71,7 +70,7 @@ export default function Projects() {
                                     <p className="text-sm text-cinza dark:text-lightBlue">{project.info}</p>
                                     <p className="text-sm text-cinza dark:text-lightBlue">{project.stacks}</p>
                                 </div>
-                                <div className="flex flex-col gap-2 lg:flex-row lg:justify-center lg:gap-4 mt-3">
+                                <div className="flex lg:flex-col gap-4 lg:flex-row lg:justify-center mt-3">
                                     <Link
                                         href={project.link}
                                         className="text-center p-2 px-4 bg-blue dark:bg-green text-preto rounded-xl font-bold uppercase tracking-wider text-[10px] lg:flex-1"
