@@ -30,7 +30,7 @@ export default function SignevalPage() {
     return (
         <main className="projects container w-full min-h-svh flex flex-col items-center justify-center py-16">
             {/* Titre */}
-            <div className="text-center mb-5">
+            <div className="text-center mb-4">
                 <h1 className="font-title text-3xl text-preto dark:text-white">
                     {t("Title")}
                 </h1>
@@ -44,7 +44,7 @@ export default function SignevalPage() {
                 slidesPerView={1}
                 navigation
                 pagination={{ clickable: true }}
-                className="w-[235px] h-[550px] sm:w-[275px] sm:h-[575px] md:w-[300px] md:h-[600px] lg:w-[340px] lg:h-[680px] xl:w-[380px] xl:h-[740px] pb-10"
+                className="w-[220px] h-[525px] sm:w-[275px] sm:h-[575px] md:w-[300px] md:h-[600px] lg:w-[340px] lg:h-[680px] xl:w-[380px] xl:h-[740px] pb-10"
             >
                 {maquettes.map((src, index) => (
                     <SwiperSlide key={index}>
