@@ -44,7 +44,7 @@ export default function SignevalPage() {
                 slidesPerView={1}
                 navigation
                 pagination={{ clickable: true }}
-                className="w-[220px] h-[525px] sm:w-[275px] sm:h-[575px] md:w-[300px] md:h-[600px] lg:w-[340px] lg:h-[680px] xl:w-[380px] xl:h-[740px] pb-10"
+                className="w-[220px] h-[525px] sm:w-[275px] sm:h-[575px] lg:w-[300px] lg:h-[680px] pb-10"
             >
                 {maquettes.map((src, index) => (
                     <SwiperSlide key={index}>
