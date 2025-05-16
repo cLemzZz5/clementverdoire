@@ -84,11 +84,11 @@
 
 @layer components {
   .swiper-pagination {
-    @apply !bottom-0 flex justify-center gap-1;
+    @apply !bottom-2 flex justify-center gap-1;
   }
 
   .swiper-pagination-bullet {
-    @apply bg-white opacity-60 w-2 h-2 rounded-full transition;
+    @apply bg-white/60 w-2 h-2 rounded-full transition;
   }
 
   .swiper-pagination-bullet-active {

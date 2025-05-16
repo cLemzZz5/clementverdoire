@@ -40,24 +40,24 @@ export default function SignevalPage() {
             {/* Slider dans un iPhone stylisé */}
             <Swiper
                 modules={[Navigation, Pagination]}
-                spaceBetween={30}
+                spaceBetween={20}
                 slidesPerView={1}
                 navigation
                 pagination={{ clickable: true }}
-                className="w-[300px] h-[660px] pb-8 shadow-none bg-transparent"
+                className="w-[260px] h-[580px] sm:w-[275px] sm:h-[575px] md:w-[300px] md:h-[600px] lg:w-[340px] lg:h-[680px] xl:w-[380px] xl:h-[740px] pb-10"
             >
                 {maquettes.map((src, index) => (
                     <SwiperSlide key={index}>
-                        <div className="relative w-[300px] h-[620px] bg-black rounded-[3rem] border-[6px] border-gray-800 shadow-2xl overflow-hidden">
-                            {/* Notch iPhone */}
-                            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-28 h-4 bg-black rounded-b-xl z-10" />
+                        <div className="relative w-full h-full bg-black rounded-[2.5rem] border-[6px] border-gray-800 shadow-xl overflow-hidden">
+                            {/* Notch */}
+                            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 sm:w-28 h-4 bg-black rounded-b-xl z-10" />
 
-                            {/* Maquette */}
                             <Image
                                 src={src}
                                 alt={`Maquette ${index + 1}`}
                                 fill
-                                className="bg-white"
+                                // className="object-contain mt-6"
+                                priority
                             />
                         </div>
                     </SwiperSlide>
