@@ -23,7 +23,13 @@
     },
     "Projects": {
         "Title": "Projets",
-        "Button": "Voir le projet"
+        "Button": "Projet",
+        "ButtonMaquette": "Maquettes",
+        "SignEval": {
+            "Title": "Maquettes SignEval",
+            "Description": "Application web de gestion des évaluations pour les étudiants et les enseignants, développée avec ReactJS et MUI. SignEval permet aux utilisateurs de créer, gérer et suivre leurs évaluations de manière intuitive et efficace.",
+            "Link": "https://www.signeval.com"
+        }
     },
     "Experience": {
         "Title": "Expérience",

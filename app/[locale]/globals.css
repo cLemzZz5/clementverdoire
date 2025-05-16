@@ -1,3 +1,7 @@
+@import 'swiper/css';
+@import 'swiper/css/navigation';
+@import 'swiper/css/pagination';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -56,6 +60,7 @@
 
 }
 
+
 .swiper-pagination {
   position: relative !important;
 }
@@ -74,4 +79,19 @@
   width: 16px;
   height: 16px;
   opacity: 1;
+}
+
+
+@layer components {
+  .swiper-pagination {
+    @apply !bottom-0 flex justify-center gap-1;
+  }
+
+  .swiper-pagination-bullet {
+    @apply bg-white opacity-60 w-2 h-2 rounded-full transition;
+  }
+
+  .swiper-pagination-bullet-active {
+    @apply bg-lightBlue opacity-100 scale-110;
+  }
 }

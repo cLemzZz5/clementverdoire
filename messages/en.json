@@ -23,7 +23,13 @@
   },
   "Projects": {
     "Title": "Projects",
-    "Button": "View Project"
+    "Button": "Project",
+    "ButtonMaquette": "Mockups",
+    "SignEval": {
+      "Title": "SignEval Mockups",
+      "Description": "Web application for managing evaluations for students and teachers, developed with ReactJS and MUI. SignEval allows users to create, manage, and track their evaluations in an intuitive and efficient manner.",
+      "Link": "https://www.signeval.com"
+    }
   },
   "Experience": {
     "Title": "Experience",

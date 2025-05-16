@@ -60,7 +60,7 @@ export default function Feedbacks() {
                 className="w-11/12 max-w-3xl mt-4"
             >
                 {feedbacksList.map((feed, index) => (
-                    <SwiperSlide key={index} className="w-60 h-60 mb-4 bg-white dark:bg-cinza p-4 flex flex-col items-center justify-center text-preto dark:text-lightBlue rounded-xl shadow-lg">
+                    <SwiperSlide key={index} className="w-100 h-50 mb-4 bg-white dark:bg-cinza p-4 flex flex-col items-flex-start justify-center text-preto dark:text-lightBlue rounded-xl shadow-lg">
                         <RiDoubleQuotesR className="absolute -z-10 text-9xl right-0 opacity-10" />
 
                         <div className="">
