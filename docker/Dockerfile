@@ -1,24 +1,25 @@
-# Étape 1 : Build de l'app Next.js en mode statique
+# Étape 1 : Build SSR Next.js
 FROM node:20-alpine AS builder
 
 WORKDIR /app
-
 COPY package*.json ./
 RUN npm ci
-
 COPY . .
+RUN npm run build
 
-# Export en site statique
-RUN npm run build && npm run export
+# Étape 2 : Apache reverse proxy + serveur Node.js
+FROM node:20-alpine
 
-# Étape 2 : Image finale avec Apache
-FROM httpd:2.4-alpine
+RUN apk add --no-cache apache2 apache2-utils && mkdir -p /run/apache2
 
-# Supprime la page d'accueil par défaut d'Apache
-RUN rm -rf /usr/local/apache2/htdocs/*
+WORKDIR /app
+ENV NODE_ENV=production
+ENV PORT=3000
 
-# Copie le site statique généré
-COPY --from=builder /app/out/ /usr/local/apache2/htdocs/
+COPY --from=builder /app /app
+RUN npm ci --omit=dev
+
+COPY docker/apache.conf /etc/apache2/conf.d/default.conf
 
 EXPOSE 80
-CMD ["httpd-foreground"]
+CMD sh -c "httpd -k start && npm start"
