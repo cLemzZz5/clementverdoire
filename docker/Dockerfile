@@ -1,26 +1,27 @@
-FROM node:20-alpine
+# Étape 1 : build de l'app Next.js
+FROM node:20-alpine AS builder
 
-# Installer Apache avec proxy modules
-RUN apk add --no-cache apache2 apache2-utils && \
-    mkdir -p /run/apache2 && \
-    sed -i '/^#LoadModule proxy_module/s/^#//' /etc/apache2/httpd.conf && \
-    sed -i '/^#LoadModule proxy_http_module/s/^#//' /etc/apache2/httpd.conf
-
-# Définir dossier de l’app
 WORKDIR /app
 
-# Variables d'env
+COPY package*.json ./
+RUN npm ci
+
+COPY . .
+RUN npm run build
+
+# Étape 2 : image finale pour servir l'app
+FROM node:20-alpine AS runner
+
+WORKDIR /app
+
 ENV NODE_ENV=production
-ENV PORT=3000
+ENV PORT=80
 
-# Copier et installer app
-COPY . /app
-RUN npm ci && npm run build
+COPY --from=builder /app/public ./public
+COPY --from=builder /app/.next ./.next
+COPY --from=builder /app/package*.json ./
 
-# Copier la config apache
-COPY docker/apache.conf /etc/apache2/conf.d/default.conf
+RUN npm ci --omit=dev
 
 EXPOSE 80
-
-# Lancer Apache + Next
-CMD sh -c "httpd -D FOREGROUND & npm start"
+CMD ["npm", "start"]
