@@ -1,0 +1,41 @@
+kind: pipeline
+type: docker
+name: portfolio-v2-nextjs
+
+trigger:
+  branch:
+    - main
+  event:
+    - push
+
+steps:
+  - name: install-dependencies
+    image: node:20
+    commands:
+      - npm ci
+
+  - name: build-app
+    image: node:20
+    commands:
+      - npm run build
+
+  - name: docker-build-and-push
+    image: plugins/docker
+    settings:
+      dockerfile: docker/Dockerfile
+      context: .
+      registry: hub.codefirst.iut.uca.fr
+      mirror: https://proxy.iut.uca.fr:8443
+      repo: hub.codefirst.iut.uca.fr/clement.verdoire/portfolio-v2-nextjs
+      username:
+        from_secret: SECRET_REGISTRY_USERNAME
+      password:
+        from_secret: SECRET_REGISTRY_PASSWORD
+
+  - name: deploy-container
+    image: hub.codefirst.iut.uca.fr/thomas.bellembois/codefirst-dockerproxy-clientdrone:latest
+    environment:
+      IMAGENAME: hub.codefirst.iut.uca.fr/clement.verdoire/portfolio-v2-nextjs:latest
+      CONTAINERNAME: portfolio-v2-nextjs
+      COMMAND: create
+      OVERWRITE: true
