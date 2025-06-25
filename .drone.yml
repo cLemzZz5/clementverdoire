@@ -32,8 +32,6 @@ steps:
       password:
         from_secret: SECRET_REGISTRY_PASSWORD
 
-        
-
   - name: deploy-container
     image: hub.codefirst.iut.uca.fr/thomas.bellembois/codefirst-dockerproxy-clientdrone:latest
     environment:
