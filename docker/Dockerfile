@@ -1,25 +1,26 @@
-# Étape 1 : Build SSR Next.js
-FROM node:20-alpine AS builder
-
-WORKDIR /app
-COPY package*.json ./
-RUN npm ci
-COPY . .
-RUN npm run build
-
-# Étape 2 : Apache reverse proxy + serveur Node.js
 FROM node:20-alpine
 
-RUN apk add --no-cache apache2 apache2-utils && mkdir -p /run/apache2
+# Installer Apache avec proxy modules
+RUN apk add --no-cache apache2 apache2-utils && \
+    mkdir -p /run/apache2 && \
+    sed -i '/^#LoadModule proxy_module/s/^#//' /etc/apache2/httpd.conf && \
+    sed -i '/^#LoadModule proxy_http_module/s/^#//' /etc/apache2/httpd.conf
 
+# Définir dossier de l’app
 WORKDIR /app
+
+# Variables d'env
 ENV NODE_ENV=production
 ENV PORT=3000
 
-COPY --from=builder /app /app
-RUN npm ci --omit=dev
+# Copier et installer app
+COPY . /app
+RUN npm ci && npm run build
 
+# Copier la config apache
 COPY docker/apache.conf /etc/apache2/conf.d/default.conf
 
 EXPOSE 80
-CMD sh -c "httpd -k start && npm start"
+
+# Lancer Apache + Next
+CMD sh -c "httpd -D FOREGROUND & npm start"
