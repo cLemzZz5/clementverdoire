@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useEffect, useState } from 'react'
-import { usePathname, useRouter } from '@/i18n/routing';
+import { usePathname, useRouter } from '../../src/i18n/routing';
 import { useParams } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 import { useTheme } from "next-themes";

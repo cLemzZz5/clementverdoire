@@ -4,7 +4,7 @@ import { Inter } from 'next/font/google';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
-import { routing } from '@/i18n/routing';
+import { routing } from '../../src/i18n/routing';
 
 import "./globals.css";
 
@@ -14,8 +14,7 @@ import Footer from "../components/Footer";
 import BackgroundDetail from "../components/BackgroundDetail";
 import SocialLateral from "../components/SocialLateral";
 
-
-import { ThemeProviderClient } from "@/context/ThemeProviderClient";
+import { ThemeProviderClient } from "../../src/context/ThemeProviderClient";
 
 const inter = Inter({
   subsets: ['latin'], preload: true
