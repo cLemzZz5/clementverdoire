@@ -1,4 +1,4 @@
-# Étape 1 : build de l'app Next.js
+# Étape 1 : Build de l'app Next.js en mode statique
 FROM node:20-alpine AS builder
 
 WORKDIR /app
@@ -7,21 +7,18 @@ COPY package*.json ./
 RUN npm ci
 
 COPY . .
-RUN npm run build
 
-# Étape 2 : image finale pour servir l'app
-FROM node:20-alpine AS runner
+# Export en site statique
+RUN npm run build && npm run export
 
-WORKDIR /app
+# Étape 2 : Image finale avec Apache
+FROM httpd:2.4-alpine
 
-ENV NODE_ENV=production
-ENV PORT=80
+# Supprime la page d'accueil par défaut d'Apache
+RUN rm -rf /usr/local/apache2/htdocs/*
 
-COPY --from=builder /app/public ./public
-COPY --from=builder /app/.next ./.next
-COPY --from=builder /app/package*.json ./
-
-RUN npm ci --omit=dev
+# Copie le site statique généré
+COPY --from=builder /app/out/ /usr/local/apache2/htdocs/
 
 EXPOSE 80
-CMD ["npm", "start"]
+CMD ["httpd-foreground"]
