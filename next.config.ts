@@ -5,8 +5,8 @@ const withNextIntl = createNextIntlPlugin();
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     output: 'standalone',
-    basePath: '/containers/portfolio-v2',
-    assetPrefix: '/containers/portfolio-v2',
+    basePath: '/containers/clementverdoire-portfolio-v2',
+    assetPrefix: '/containers/clementverdoire-portfolio-v2/', // utile pour charger les images, fonts, etc.
     experimental: {
         outputFileTracingIncludes: {
             '/': ['./messages/**/*'],
@@ -15,10 +15,8 @@ const nextConfig = {
     images: {
         unoptimized: true,
     },
-    // Optimize for production
     compress: true,
     poweredByHeader: false,
-    trailingSlash: true,
 };
 
 module.exports = withNextIntl(nextConfig);
