@@ -1,30 +1,45 @@
- node_modules
+.dockerignore
+node_modules
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+.pnpm-debug.log*
 
-# Runtime data
-pids
-*.pid
-*.seed
-*.pid.lock
+# testing
+/coverage
 
-# Coverage directory used by tools like istanbul
-coverage
-*.lcov
+# next.js
+/.next/
+/out/
 
-# Logs
-logs
-*.log
+# production
+/build
 
-# Environment variables
-.env
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+# misc
+.DS_Store
+*.pem
 
-# OS generated files
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# local env files
+.env*
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# IDE
+.vscode/
+.idea/
+
+# OS
 .DS_Store
 .DS_Store?
 ._*
@@ -33,12 +48,6 @@ logs
 ehthumbs.db
 Thumbs.db
 
-# Editor directories and files
-.vscode/
-.idea/
-*.swp
-*.swo
-
 # Git
 .git
 .gitignore
@@ -46,9 +55,5 @@ Thumbs.db
 # Drone CI
 .drone.yml
 
-# Docker
-Dockerfile
-.dockerignore
-
 # README
-README.md 
+README.md
