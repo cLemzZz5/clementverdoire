@@ -1,6 +1,6 @@
 kind: pipeline
 type: docker
-name: portfolio2-clement-verdoire
+name: portfolio-clement-verdoire
 
 trigger:
   event:
@@ -14,7 +14,7 @@ steps:
       context: .
       registry: hub.codefirst.iut.uca.fr
       mirror: https://proxy.iut.uca.fr:8443
-      repo: hub.codefirst.iut.uca.fr/clement.verdoire/portfolio2
+      repo: hub.codefirst.iut.uca.fr/clement.verdoire/portfolio-v2
       username:
         from_secret: SECRET_REGISTRY_USERNAME
       password:
@@ -23,7 +23,7 @@ steps:
   - name: deploy-container
     image: hub.codefirst.iut.uca.fr/thomas.bellembois/codefirst-dockerproxy-clientdrone:latest
     environment:
-      IMAGENAME: hub.codefirst.iut.uca.fr/clement.verdoire/portfolio2:latest
-      CONTAINERNAME: portfolio2
+      IMAGENAME: hub.codefirst.iut.uca.fr/clement.verdoire/portfolio-v2:latest
+      CONTAINERNAME: portfolio-v2
       COMMAND: create
       OVERWRITE: true

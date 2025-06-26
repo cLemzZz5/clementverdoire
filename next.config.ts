@@ -5,6 +5,8 @@ const withNextIntl = createNextIntlPlugin();
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     output: 'standalone',
+    basePath: '/containers/portfolio-v2',
+    assetPrefix: '/containers/portfolio-v2',
     experimental: {
         outputFileTracingIncludes: {
             '/': ['./messages/**/*'],
@@ -16,8 +18,7 @@ const nextConfig = {
     // Optimize for production
     compress: true,
     poweredByHeader: false,
-    // Asset prefix for static files if needed
-    // assetPrefix: process.env.NODE_ENV === 'production' ? '/containers/clementverdoire-portfolio' : '',
+    trailingSlash: true,
 };
 
 module.exports = withNextIntl(nextConfig);
